@@ -1,0 +1,27 @@
+class Solution {
+    public int[] solution(int n, int m) {
+        int[] answer = new int[2];
+        int max = 0;
+        int min = 0;
+        
+        if(n > m){
+            max = n;
+            min = m;
+        }else{
+            max = m;
+            min = n;
+        }
+        
+        while(min > 0){
+            int tmp = min;
+            min = max % min;
+            max = tmp;
+        }
+        
+        answer[0] = max;
+        answer[1] = n*m/max;
+         
+        
+        return answer;
+    }
+}
