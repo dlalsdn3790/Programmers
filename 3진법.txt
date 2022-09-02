@@ -1,0 +1,15 @@
+class Solution {
+    public int solution(int n) {
+        int answer;
+        String base3 = "";
+
+        while (n != 0) {
+            base3 += Integer.toString(n % 3);
+            n = n / 3;
+        }
+
+        answer = Integer.parseInt(base3, 3);
+
+        return answer;
+    }
+}
